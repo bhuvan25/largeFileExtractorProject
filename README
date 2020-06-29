@@ -9,3 +9,84 @@ postgres=# CREATE TABLE (name VARCHAR(50), numberOfProducts INTEGER);
 
 => Go to largeFileExtractorProject/src/main/resources/updateQuery.txt and update this file for all the update statements you want on product Table
 => Go to Service.java and run
+
+
+INPUT:
+              name              |         sku         |                                                                                               description
+--------------------------------+---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Michelle Allen                 | charge-region       | Community arm once factor. Religious now scientist throughout school condition.                                                                                                                        +
+                                |                     | Catch contain cup in. Important number media attack stay what.                                                                                                                                         +
+                                |                     | City whatever man here opportunity senior single.
+ Juan Johnson                   | where-ok-citizen    | Have decision box some since. Next pull walk since.                                                                                                                                                    +
+                                |                     | White piece loss catch citizen on none pressure. Remain cause major on rule. Affect director story major pretty.
+ Joseph Davis                   | hold-news-movie     | Will charge stay summer blue. Poor form city.                                                                                                                                                          +
+                                |                     | Activity candidate wish size talk manager. Size data call area share politics. Heart old without marriage serve.
+ Zachary Kelley                 | number-say-entire   | Something movement thought son design explain. Cultural edge top lawyer early.                                                                                                                         +
+                                |                     | Model up official. Character director citizen do.
+ Shannon Howard                 | civil-small-force   | Ball full common. Treatment condition foreign still. Imagine feeling upon word. Daughter page view sister.                                                                                             +
+                                |                     | Actually note step allow right. Course voice star rest free dinner hope set.
+ Darlene Smith                  | more-whom-response  | Book level program relate stock. Chair local argue section skill defense statement reason. His thousand rate remain.
+ Gabriel Davidson               | herself-live-dark   | Situation station tax heart newspaper company card. Better through easy walk value western.                                                                                                            +
+                                |                     | Test case leg because. Though talk floor feeling heart.                                                                                                                                                +
+                                |                     | Learn arm only since.
+ Antonio Rose                   | at-vote-economic    | Wear foreign open bank game admit no. From situation project.                                                                                                                                          +
+                                |                     | As ago detail whatever outside sometimes center language. Value shoulder music yes day.
+ Mary Maddox                    | also-project-theory | Large choice record official. Condition yeah dream can concern security.                                                                                                                               +
+                                |                     | Bank hundred degree one series identify office. Total institution book follow.
+ Mr. James Garcia III           | interest-each       | Morning low middle society car. Require meet affect control mother happy. Common per example recent art cup myself.                                                                                    +
+                                |                     | Deal without buy. Strong reflect great cause number like off buy.
+ Jennifer Perez                 | sea-camera          | Occur part from. Believe politics there night rather next. Leader water east well.                                                                                                                     +
+                                |                     | Pick win others agree. Project common skin.
+ Shannon Martinez               | clear-him-meeting   | Political everyone stock whole pass road decide different. Then picture major first own measure follow program. Door group draw answer cost lot. Its save matter talk before.
+
+
+
+After updating:
+name  |    sku    |                                                           description
+--------+-----------+---------------------------------------------------------------------------------------------------------------------------------
+ bhuvan | step-onto | Choice should lead budget task. Author best mention.                                                                           +
+        |           | Often stuff professional today allow after door instead. Model seat fear evidence. Now sing opportunity feeling no season show.
+(1 row)
+
+
+
+OUTPUT :
+    name              | number
+--------------------------------+--------
+ Aaron Abbott                   |      1
+ Aaron Acevedo                  |      1
+ Aaron Acosta                   |      4
+ Aaron Adams                    |      6
+ Aaron Aguilar                  |      1
+ Aaron Alexander                |      2
+ Aaron Allen                    |      5
+ Aaron Allison                  |      1
+ Aaron Alvarado                 |      3
+ Aaron Alvarez                  |      5
+ Aaron Anderson                 |     14
+ Aaron Andrews                  |      2
+ Aaron Anthony                  |      1
+ Aaron Arellano                 |      1
+ Aaron Armstrong                |      3
+ Aaron Arnold                   |      2
+ Aaron Arnold II                |      1
+ Aaron Austin                   |      3
+ Aaron Avila                    |      2
+ Aaron Ayala                    |      1
+ Aaron Ayers                    |      1
+ Aaron Bailey                   |      5
+ Aaron Baird                    |      1
+ Aaron Baker                    |      5
+ Aaron Baldwin                  |      1
+ Aaron Ball                     |      2
+ Aaron Ballard                  |      1
+ Aaron Banks                    |      2
+ Aaron Barajas                  |      1
+ Aaron Barker                   |      1
+ Aaron Barnes                   |      1
+ Aaron Barnett                  |      1
+ Aaron Barrera                  |      1
+ Aaron Barrett                  |      1
+ Aaron Barron                   |      2
+ Aaron Barry                    |      1
+ Aaron Bartlett                 |      1
