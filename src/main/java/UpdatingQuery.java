@@ -5,14 +5,12 @@ import org.supercsv.io.ICsvBeanReader;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.Properties;
 
 public class UpdatingQuery {
-    public void updateTable(String query) {
+    public void updateQuery(String query) {
+
 
         DBCongif congif = new DBCongif();
         congif.setConnectionProperties();
@@ -28,15 +26,17 @@ public class UpdatingQuery {
 
 //            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-            PreparedStatement statement = connection.prepareStatement(query);
-            statement.execute();
 //            while(true) {
-////                System.out.println("please enter sql query to update table or press enter to break ");
-////                String updateQuery = reader.readLine();
-//                if(query.equals(""))
+//                System.out.println("please enter sql query to update table or press enter to break ");
+//                String updateQuery = reader.readLine();
+//                if(updateQuery.equals(""))
 //                    break;
-//
+//                Statement statement = connection.createStatement();
+//                statement.execute(updateQuery);
 //            }
+            Statement statement = connection.createStatement();
+            statement.execute(query);
+//            statement.execute("UPDATE productTable "+ "SET name='bhuvan' " + "WHERE sku='step-onto' ;");
 
 
             connection.commit();

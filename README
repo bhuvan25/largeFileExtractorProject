@@ -1,0 +1,11 @@
+Open terminal and write following commands
+
+$ docker run --name pG -e POSTGRES_PASSWORD=abcd -d postgres -p 5432:5432
+$ docker exec -it pG psql -U postgres
+postgres=# CREATE DATABASE main;
+postgres=# CREATE TABLE productTable(name VARCHAR(50), sku VARCHAR(50), description VARCHAR(50));
+postgres=# CREATE TABLE (name VARCHAR(50), numberOfProducts INTEGER);
+
+
+=> Go to largeFileExtractorProject/src/main/resources/updateQuery.txt and update this file for all the update statements you want on product Table
+=> Go to Service.java and run

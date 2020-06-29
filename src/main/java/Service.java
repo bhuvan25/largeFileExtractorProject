@@ -1,6 +1,4 @@
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 
 public class Service {
     private static CsvToDBInserter csvToDBInserter;
@@ -17,16 +15,28 @@ public class Service {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
 
-        String path = "/Users/bhuvan.taneja/Documents/Products.csv";
+        String path = "src/main/resources/products.csv";
         csvToDBInserter.createTable(path);
 
-        while(true) {
-            System.out.println("give update query as input or press enter to exit");
-            String query = reader.readLine();
-            if(query.equals(""))
-                break;
-            updatingQuery.updateTable(query);
+        File file = new File("src/main/resources/updateQuery.txt");
+        FileReader fr=new FileReader(file);   //reads the file
+        BufferedReader br=new BufferedReader(fr);  //creates a buffering character input stream
+        String query;
+
+        while((query=br.readLine())!=null)
+        {
+            updatingQuery.updateQuery(query);
+
         }
+//        while(true){
+//            String q =reader.readLine();
+//            if(q.equals(""))
+//                break;
+//            updatingQuery.updateTable();
+//        }
+
+//        updatingQuery.updateQuery();
+
 
         aggreagtingQuery.aggreagateTable();
     }

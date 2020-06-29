@@ -2,7 +2,7 @@ import java.util.Properties;
 
 
 public class DBCongif {
-    String dbURL = "jdbc:postgresql://localhost:5432/testing";
+    String dbURL = "jdbc:postgresql://localhost:5432/main";
 
     Properties connectionProperties ;
 
