@@ -12,6 +12,10 @@ postgres=# CREATE TABLE (name VARCHAR(50), numberOfProducts INTEGER);
 
 
 INPUT:
+
+NUMBER OF ROWS : 500000
+
+
               name              |         sku         |                                                                                               description
 --------------------------------+---------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
  Michelle Allen                 | charge-region       | Community arm once factor. Religious now scientist throughout school condition.                                                                                                                        +
@@ -51,6 +55,9 @@ name  |    sku    |                                                           de
 
 
 OUTPUT :
+
+Number of Rows : 222025
+
     name              | number
 --------------------------------+--------
  Aaron Abbott                   |      1
@@ -90,3 +97,4 @@ OUTPUT :
  Aaron Barron                   |      2
  Aaron Barry                    |      1
  Aaron Bartlett                 |      1
+
