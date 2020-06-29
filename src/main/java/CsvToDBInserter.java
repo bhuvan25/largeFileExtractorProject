@@ -9,12 +9,12 @@ import org.supercsv.prefs.CsvPreference;
 
 public class CsvToDBInserter {
 
-    public static void main(String[] args) {
+    public void createTable(String filePath) {
 
         DBCongif congif = new DBCongif();
         congif.setConnectionProperties();
 
-        String csvFilePath = "/Users/bhuvan.taneja/Documents/Products.csv";
+//        String csvFilePath = "/Users/bhuvan.taneja/Documents/Products.csv";
 
         int batchSize = 40;
 
@@ -32,11 +32,12 @@ public class CsvToDBInserter {
 
             connection = DriverManager.getConnection(congif.dbURL, congif.connectionProperties);
             connection.setAutoCommit(false);
+            System.out.println("starting the insertion process");
 
             String sql = "INSERT INTO productTable (name, sku, description) VALUES (?, ?, ?)";
             PreparedStatement statement = connection.prepareStatement(sql);
 
-            beanReader = new CsvBeanReader(new FileReader(csvFilePath),
+            beanReader = new CsvBeanReader(new FileReader(filePath),
                     CsvPreference.STANDARD_PREFERENCE);
 
             beanReader.getHeader(true); // skip header line
@@ -59,7 +60,7 @@ public class CsvToDBInserter {
                 statement.addBatch();
                 count++;
                 if (count % batchSize == 0) {
-                    System.out.println("started");
+//                    System.out.println("started");
                     statement.executeBatch();
                 }
             }
@@ -71,7 +72,7 @@ public class CsvToDBInserter {
             connection.close();
 
             long end = System.currentTimeMillis();
-            System.out.println("Execution Time: " + (end - start));
+            System.out.println("Time Taken to insert :  " + (end - start));
         } catch (IOException ex) {
             System.err.println(ex);
         } catch (SQLException ex) {

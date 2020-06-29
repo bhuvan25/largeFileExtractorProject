@@ -12,7 +12,7 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class UpdatingQuery {
-    public static void main(String[] args) {
+    public void updateTable(String query) {
 
         DBCongif congif = new DBCongif();
         congif.setConnectionProperties();
@@ -26,16 +26,17 @@ public class UpdatingQuery {
             connection = DriverManager.getConnection(congif.dbURL, congif.connectionProperties);
             connection.setAutoCommit(false);
 
-            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+//            BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-            while(true) {
-                System.out.println("please enter sql query to update table or press enter to break ");
-                String updateQuery = reader.readLine();
-                if(updateQuery.equals(""))
-                    break;
-                PreparedStatement statement = connection.prepareStatement(updateQuery);
-                statement.execute();
-            }
+            PreparedStatement statement = connection.prepareStatement(query);
+            statement.execute();
+//            while(true) {
+////                System.out.println("please enter sql query to update table or press enter to break ");
+////                String updateQuery = reader.readLine();
+//                if(query.equals(""))
+//                    break;
+//
+//            }
 
 
             connection.commit();
@@ -45,8 +46,6 @@ public class UpdatingQuery {
             System.out.println("Execution Time: " + (end - start));
 
         } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
             e.printStackTrace();
         }
 

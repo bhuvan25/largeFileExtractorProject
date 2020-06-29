@@ -2,19 +2,19 @@
 import java.sql.*;
 
 public class AggreagtingQuery {
-    public static void main(String[] args) {
+    public void aggreagateTable() {
 
         DBCongif congif = new DBCongif();
         congif.setConnectionProperties();
 
         Connection connection;
 
-
         try {
             long start = System.currentTimeMillis();
 
             connection = DriverManager.getConnection(congif.dbURL, congif.connectionProperties);
             connection.setAutoCommit(false);
+            System.out.println("Starting Aggregating process");
 
 
             Statement statement = connection.createStatement();
@@ -25,7 +25,7 @@ public class AggreagtingQuery {
             connection.close();
 
             long end = System.currentTimeMillis();
-            System.out.println("Execution Time: " + (end - start));
+            System.out.println("Time taken to aggregate :  " + (end - start));
 
         } catch (SQLException e) {
             e.printStackTrace();
